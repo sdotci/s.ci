@@ -1,0 +1,19 @@
+{
+    "name": "s/s",
+    "type": "project",
+    "description": "The S project",
+    "autoload": {
+        "psr-4": {
+            "S\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sigui Kessé Emmanuel",
+            "email": "contact@sigui.ci"
+        }
+    ],
+    "require": {
+        "php": ">=8.2"
+    }
+}
