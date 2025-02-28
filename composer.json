@@ -25,14 +25,16 @@
         "analyse": "phpstan analyse --ansi --memory-limit=-1 --debug",
         "check": "pint --test -v",
         "coverage": "pest --coverage",
-        "debug": ["@check", "@analyse", "@review", "@test"],
-        "fix": ["@refactor", "@lint"],
-        "bridget": "@php bridget.php",
+        "debug": ["@check", "@analyse", "@inspect", "@review", "@test"],
+        "fix": ["@refactor", "@format", "@lint"],
+        "format": "psalter --issues=all",
+        "inspect": "psalm --no-diff",
         "lint": "pint -v",
-        "test": "pest --colors=always",
+        "pretest": "psalm-plugin enable psalm/plugin-laravel",
         "retest": "pest --retry",
         "review": "rector --dry-run --debug",
-        "refactor": "rector"
+        "refactor": "rector",
+        "test": "pest --colors=always"
     },
     "extra": {
         "branch-alias": {
