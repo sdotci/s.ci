@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-use S\Foundation\Http\Router;
+use S\Foundation\Http\Server;
 
 require_once __DIR__.'/../bootstrap.php';
 
-$router = new Router;
+$server = new Server($_SERVER);
 
-$router->on('GET /', fn () => '<p>Welcome to S!</p>');
+$server->on('GET /', fn () => '<p>Welcome to S!</p>');
 
-$router->run(($_SERVER['REQUEST_METHOD'] ?? 'GET').' '.($_SERVER['REQUEST_URI'] ?? '/'));
+$server->run();
