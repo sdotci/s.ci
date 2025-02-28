@@ -4,8 +4,10 @@
     "description": "The S project",
     "autoload": {
         "psr-4": {
-            "S\\": "src/"
-        }
+            "App\\": "src/app/",
+            "S\\": "src/core/"
+        },
+        "files": ["src/app.php", "src/core.php"]
     },
     "authors": [
         {
