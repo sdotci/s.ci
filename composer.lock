@@ -4,8 +4,161 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "866a34275df8608e27b1e98f5fdf788c",
-    "packages": [],
+    "content-hash": "a382860cc2534e4b02fe944f3b185cc7",
+    "packages": [
+        {
+            "name": "s/s",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/s",
+                "reference": "0cca80b45a34d839fe303352f22a7901e06a7bd0"
+            },
+            "require": {
+                "ext-readline": "*",
+                "php": "^8.4"
+            },
+            "replace": {
+                "psr/container": "^2.0"
+            },
+            "require-dev": {
+                "siguici/php-devtools": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "S\\": [
+                        "src/core/",
+                        "src/framework/"
+                    ],
+                    "": "src/standard/"
+                },
+                "files": [
+                    "src/core/s.php"
+                ]
+            },
+            "scripts": {
+                "analyse": [
+                    "phpstan analyse --ansi --memory-limit=-1 --debug"
+                ],
+                "check": [
+                    "pint --test -v"
+                ],
+                "coverage": [
+                    "pest --coverage"
+                ],
+                "debug": [
+                    "@check",
+                    "@analyse",
+                    "@inspect",
+                    "@review",
+                    "@test"
+                ],
+                "fix": [
+                    "@refactor",
+                    "@format",
+                    "@lint"
+                ],
+                "format": [
+                    "psalter --issues=all"
+                ],
+                "inspect": [
+                    "psalm --no-diff"
+                ],
+                "lint": [
+                    "pint -v"
+                ],
+                "pretest": [
+                    "psalm-plugin enable psalm/plugin-laravel"
+                ],
+                "retest": [
+                    "pest --retry"
+                ],
+                "review": [
+                    "rector --dry-run --debug"
+                ],
+                "refactor": [
+                    "rector"
+                ],
+                "test": [
+                    "pest --colors=always"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sigui Kessé Emmanuel",
+                    "email": "siguici@proton.me",
+                    "homepage": "https://github.com/siguici"
+                }
+            ],
+            "description": "The S project.",
+            "homepage": "https://s.ci",
+            "keywords": [
+                "archiver",
+                "array-config",
+                "binary",
+                "blade-template",
+                "cli-app",
+                "compiler",
+                "compressor",
+                "dotenv",
+                "emit-event",
+                "env",
+                "event-emitter",
+                "event-listener",
+                "events",
+                "fetch",
+                "ftp-client",
+                "ftp-server",
+                "get-files",
+                "ini",
+                "input",
+                "installer",
+                "let var",
+                "listen-event",
+                "oop",
+                "oriented-object-programming",
+                "output",
+                "parser",
+                "path-parser",
+                "path-parsing",
+                "php-transpiler",
+                "programming-language",
+                "put-files",
+                "query-parser",
+                "query-parsing",
+                "runtime",
+                "s",
+                "s-ci",
+                "scripting-language",
+                "sdotci",
+                "stream",
+                "templating-engine",
+                "type",
+                "typesafe",
+                "uri-parser",
+                "uri-parsing"
+            ],
+            "support": {
+                "source": "https://github.com/sdotci/s",
+                "issues": "https://github.com/sdotci/s/issues",
+                "chat": "https://github.com/orgs/sdotci/discussions",
+                "wiki": "https://github.com/sdotci/s/wiki"
+            },
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        }
+    ],
     "packages-dev": [
         {
             "name": "amphp/amp",
@@ -4968,59 +5121,6 @@
                 "source": "https://github.com/php-fig/clock/tree/1.0.0"
             },
             "time": "2022-11-25T14:36:26+00:00"
-        },
-        {
-            "name": "psr/container",
-            "version": "2.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/container.git",
-                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/c71ecc56dfe541dbd90c5360474fbc405f8d5963",
-                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Container\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
-                }
-            ],
-            "description": "Common Container Interface (PHP FIG PSR-11)",
-            "homepage": "https://github.com/php-fig/container",
-            "keywords": [
-                "PSR-11",
-                "container",
-                "container-interface",
-                "container-interop",
-                "psr"
-            ],
-            "support": {
-                "issues": "https://github.com/php-fig/container/issues",
-                "source": "https://github.com/php-fig/container/tree/2.0.2"
-            },
-            "time": "2021-11-05T16:47:00+00:00"
         },
         {
             "name": "psr/event-dispatcher",
@@ -10632,13 +10732,14 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {},
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": {
-        "php": ">=8.2"
-    },
+    "platform": {},
     "platform-dev": {},
+    "platform-overrides": {
+        "php": "8.4"
+    },
     "plugin-api-version": "2.6.0"
 }

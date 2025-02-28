@@ -1,0 +1,6 @@
+[submodule "packages/bridget"]
+	path = packages/bridget
+	url = https://github.com/bridgetphp/bridget.git
+[submodule "packages/s"]
+	path = packages/s
+	url = https://github.com/sdotci/s.git
