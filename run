@@ -3,6 +3,12 @@
 
 declare(strict_types=1);
 
+use S\Foundation\Cli\Program;
+
 require_once __DIR__.'/bootstrap.php';
 
-echo 'Welcome to S!'.PHP_EOL;
+$program = new Program();
+
+$program->on('hello [name]', fn() => 'Welcome to S!'.PHP_EOL);
+
+$program->run($argc, $argv);
