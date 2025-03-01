@@ -3,8 +3,8 @@
 
 declare(strict_types=1);
 
-use S\Foundation\Cli\Context;
 use S\Foundation\Cli\Application;
+use S\Foundation\Cli\Context;
 
 require_once __DIR__.'/bootstrap.php';
 
@@ -12,6 +12,6 @@ $context = Context::global($argc, $argv);
 
 $app = new Application($context);
 
-$app->on('hello [name]', fn() => 'Welcome to S!'.PHP_EOL);
+$app->on('hello [name]', fn (Context $context) => 'Hello '.$context->getInput()->get(2, 'World').'!'.PHP_EOL);
 
 $app->run();
