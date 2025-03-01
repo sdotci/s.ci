@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-use S\Foundation\Http\Server;
+use S\Foundation\Http\Application;
+use S\Foundation\Http\Context;
 
 require_once __DIR__.'/../bootstrap.php';
 
-$server = new Server($_SERVER);
+$app = new Application(Context::global());
 
-$server->on('GET /', fn () => '<p>Welcome to S!</p>');
+$app->on('GET /', fn () => '<p>Welcome to S!</p>');
 
-$server->run();
+$app->run();

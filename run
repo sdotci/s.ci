@@ -3,12 +3,15 @@
 
 declare(strict_types=1);
 
-use S\Foundation\Cli\Program;
+use S\Foundation\Cli\Context;
+use S\Foundation\Cli\Application;
 
 require_once __DIR__.'/bootstrap.php';
 
-$program = new Program($argc, $argv);
+$context = Context::global($argc, $argv);
 
-$program->on('hello [name]', fn() => 'Welcome to S!'.PHP_EOL);
+$app = new Application($context);
 
-$program->run();
+$app->on('hello [name]', fn() => 'Welcome to S!'.PHP_EOL);
+
+$app->run();
