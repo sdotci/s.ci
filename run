@@ -8,10 +8,8 @@ use S\Foundation\Cli\Context;
 
 require_once __DIR__.'/bootstrap.php';
 
-$context = Context::global($argc, $argv);
+$app = new Application(Context::global($argc, $argv));
 
-$app = new Application($context);
-
-$app->on('hello [name]', fn (Context $context) => 'Hello '.$context->getInput()->get(2, 'World').'!'.PHP_EOL);
+$app->on('hello [name]', fn (Context $context) => 'Hello '.$context->getAttribute('name', 'World').'!'.PHP_EOL);
 
 $app->run();
