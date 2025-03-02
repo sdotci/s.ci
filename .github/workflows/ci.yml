@@ -57,6 +57,13 @@ jobs:
           dependency-versions: ${{ matrix.dependencies }}
           composer-options: -q --ignore-platform-reqs --no-ansi --no-cache --no-interaction --no-scripts --no-progress --prefer-dist --optimize-autoloader --classmap-authoritative
 
+      - name: 📦 Install Packages
+        run: |
+          cd packages/s
+          composer install
+          cd ../..
+          composer update
+
       - name: ✅ Run Code Lint
         run: composer check
 
