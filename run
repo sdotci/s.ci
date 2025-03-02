@@ -3,8 +3,8 @@
 
 declare(strict_types=1);
 
-use S\Foundation\Cli\Application;
-use S\Foundation\Cli\Context;
+use S\Cli\Application;
+use S\Cli\Context;
 
 require_once __DIR__.'/bootstrap.php';
 

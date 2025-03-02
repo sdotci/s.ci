@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use S\Foundation\Http\Application;
-use S\Foundation\Http\Context;
+use S\Http\Application;
+use S\Http\Context;
 
 require_once __DIR__.'/../bootstrap.php';
 
