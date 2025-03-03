@@ -10,6 +10,6 @@ require_once __DIR__.'/bootstrap.php';
 
 $app = new Application(Context::global($argc, $argv));
 
-$app->on('hello [name]', fn (?string $name) => 'Hello '.($name ?? 'World').'!'.PHP_EOL);
+$app->on('hello [name]', fn (string $name) => 'Hello '.($name ?: 'World').'!'.PHP_EOL);
 
 $app->run();
