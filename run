@@ -7,7 +7,7 @@ use S\Foundation\Application;
 use S\Cli\Context;
 
 /** @var Application $app */
-$app = (require_once __DIR__.'/src/app.php')(Context::global($argc, $argv));
+$app = (require_once __DIR__.'/src/app.php')(Context::global());
 
 $app->on('hello [name]', fn (string $name) => 'Hello '.($name ?: 'World').'!'.PHP_EOL);
 
