@@ -6,9 +6,8 @@ declare(strict_types=1);
 use S\Foundation\Application;
 use S\Cli\Context;
 
-require_once __DIR__.'/bootstrap.php';
-
-$app = new Application(Context::global($argc, $argv));
+/** @var Application $app */
+$app = (require_once __DIR__.'/src/app.php')(Context::global($argc, $argv));
 
 $app->on('hello [name]', fn (string $name) => 'Hello '.($name ?: 'World').'!'.PHP_EOL);
 
